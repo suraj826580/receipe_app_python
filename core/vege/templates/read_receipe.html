@@ -1,0 +1,42 @@
+{% extends 'base.html'%} {% block start %}
+
+<center class="py-2 my-2 card">
+  <h1>Receipe List</h1>
+</center>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rec in receipe%}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>
+          <img
+            src="{{rec.image}}"
+            alt="image"
+            width="100px"
+            height="100px"
+            style="object-fit: fill" />
+        </td>
+        <td>{{rec.name}}</td>
+        <td>{{rec.description}}</td>
+        <td>
+          <a href="/delete/{{rec.id}}"
+            ><button class="btn btn-danger">Delete</button></a
+          >
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{%endblock%}

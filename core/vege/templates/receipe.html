@@ -1,0 +1,24 @@
+{% extends "base.html"%} {%block start%}
+
+<div class="container mt-5">
+  <center><h1>Add Receipe</h1></center>
+  <hr />
+  <form class="card p-5" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">Receipe Name</label>
+      <input required type="text" name="name" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Receipe Description</label>
+      <input required type="text" name="description" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Image</label>
+      <input required type="url" name="image" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{%endblock%}
